@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Set your Git username and password
+# Set your Git username
 USERNAME="Introvertedtechie"
-PASSWORD="your_password"
 
 # Get the current repository name
 REPO_NAME=$(basename `git rev-parse --show-toplevel`)
@@ -19,6 +18,9 @@ git commit -m "$message"
 # Pull any changes from the remote repository
 git pull --rebase
 
-# Push the changes to the remote repository with username and password
-git push https://$USERNAME:$PASSWORD@github.com/$USERNAME/$REPO_NAME.git
+# Prompt the user for a GitHub token
+read -s -p "Enter your GitHub token: " TOKEN
+
+# Push the changes to the remote repository with the token
+git push https://$USERNAME:$TOKEN@github.com/$USERNAME/$REPO_NAME.git
 

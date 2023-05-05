@@ -39,6 +39,10 @@ def hbnb():
                            amenities=amenities,
                            places=places)
 
+@app.route('/0-hbnb/')
+def index():
+    # Add context data here as needed
+    return render_template('0-hbnb.html')
 
 if __name__ == "__main__":
     """ Main Function """

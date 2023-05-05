@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    {% set cache_id = uuid.uuid4() %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/4-common.css') }}?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-header.css') }}?cache_id={{ cache_id }}">
+    <!-- Add more <link> tags here with the same query string -->
+  </head>
+  <body>
+    <!-- Your HTML code here -->
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HBNB</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='scripts/3-hbnb.js') }}"></script>
+</head>
+<body>
+<header>
+    {% include '3-header.html' %}
+</header>
+<div class="container">
+    <section class="filters">
+        <h2>Filters</h2>
+        <div class="locations">
+            <h4>Location</h4>
+            <select id="locations">
+            </select>
+        </div>
+        <div class="amenities">
+            <h4>Amenities</h4>
+            <div class="popover">
+                <div class="amenities">
+                    <input type="checkbox" class="amenities-input" name="amenities" id="amenity_1">
+                    <label class="amenities-label" for="amenity_1">Wifi</label>
+                </div>
+                <div class="amenities">
+                    <input type="checkbox" class="amenities-input" name="amenities" id="amenity_2">
+                    <label class="amenities-label" for="amenity_2">Pool</label>
+                </div>
+                <div class="amenities">
+                    <input type="checkbox" class="amenities-input" name="amenities" id="amenity_3">
+                    <label class="amenities-label" for="amenity_3">Gym</label>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" id="filter-btn">Filter</button>
+    </section>
+    <section class="places-list">
+        <h2>Places</h2>
+        <div class="row" id="places-list">
+            <!-- Places will be dynamically added here -->
+        </div>
+    </section>
+</div>
+</body>
+</html>
